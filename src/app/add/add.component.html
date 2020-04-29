@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="myForm">
+      <div class="form-group">
+        <label class="col-md-4">Event Name</label>
+        <input type="text" class="form-control" formControlName="event_name" #event_name />
+      </div>
+    <div *ngIf="myForm.controls['event_name'].invalid && (myForm.controls['event_name'].dirty || myForm.controls['event_name'].touched)" class="alert alert-danger">
+      <div *ngIf="myForm.controls['event_name'].errors.required">
+        Event name is required!
+      </div>    
+    </div>
+      <div class="form-group">
+          <label class="col-md-4">Event Place</label>
+          <input type="text" class="form-control" formControlName="event_place" #event_place />
+      </div>
+      <div *ngIf="myForm.controls['event_place'].invalid && (myForm.controls['event_place'].dirty || myForm.controls['event_place'].touched)" class="alert alert-danger">
+          <div *ngIf="myForm.controls['event_place'].errors.required">
+            Event place is required!
+          </div>    
+        </div>
+      <div class="form-group">
+          <label class="col-md-4">Event Date</label>
+          <input type="text" class="form-control" formControlName="event_date" #event_date />
+      </div>
+      <div *ngIf="myForm.controls['event_date'].invalid && (myForm.controls['event_date'].dirty || myForm.controls['event_date'].touched)" class="alert alert-danger">
+          <div *ngIf="myForm.controls['event_date'].errors.required">
+            Event date is required!
+          </div>    
+        </div>
+      <div class="form-group">
+        <button (click)="addEvent(event_name.value, event_place.value, event_date.value)"
+        [disabled] = "myForm.pristine || myForm.invalid"
+          class="btn btn-secondary btn-lg btn-block">Add Event</button>
+      </div>
+    </form>
+  </div>
+</div>

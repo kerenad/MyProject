@@ -1,0 +1,35 @@
+header{
+    background-color: lightskyblue;
+    
+    
+}
+    .logo { 
+        font-weight: bold;
+        font-size: 1.5em;
+        color: palevioletred;
+    }
+    nav{
+        justify-self: auto;}
+        
+        ul{
+            list-style-type: none;
+            margin: 0; padding: 0;}
+            li{
+                float: left;}
+
+               a {
+                    padding: 1em;
+                    text-transform: uppercase;
+                    font-size: 1em;
+                    font-weight: bold;
+                    color: palevioletred;}
+                    
+
+                    a:hover {
+                        color: yellow;
+                      }
+                    
+                
+            
+        
+    

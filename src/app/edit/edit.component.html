@@ -1,0 +1,34 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angularForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">Event Name</label>
+        <input type="text" class="form-control" formControlName="event_name" #event_name>
+      </div>
+      <div *ngIf="angularForm.controls['event_name'].invalid && (angularForm.controls['event_name'].dirty || angularForm.controls['event_name'].touched)" class="alert alert-danger">
+        <div *ngIf="angularForm.controls['event_name'].errors.required">
+          Event name is required!
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Event Place</label>
+        <input type="text" class="form-control" formControlName="event_place" #event_place>
+      </div>
+      <div *ngIf="angularForm.controls['event_place'].invalid && (angularForm.controls['event_place'].dirty || angularForm.controls['event_place'].touched)" class="alert alert-danger">
+        <div *ngIf="angularForm.controls['event_place'].errors.required">
+          Event place is required!
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Event Date</label>
+        <input type="text" class="form-control" formControlName="event_date" #event_date>
+      </div>
+      <div *ngIf="angularForm.controls['event_date'].invalid && (angularForm.controls['event_date'].dirty || angularForm.controls['event_date'].touched)" class="alert alert-danger">
+        <div *ngIf="angularForm.controls['event_date'].errors.required">
+          Event date is required!
+        </div>
+      </div>
+      <button type="button" (click)="updateEvent(event_name.value, event_place.value, event_date.value)" [disabled]="angularForm.invalid" class="btn btn-primary">Update Event</button>
+    </form>
+  </div>
+</div>
